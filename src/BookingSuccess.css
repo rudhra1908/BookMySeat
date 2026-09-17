@@ -1,0 +1,1844 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap");
+
+
+/* ========================================
+   BOOKING SUCCESS PAGE
+======================================== */
+
+.booking-success-page {
+  min-height: 100vh;
+
+  overflow-x: hidden;
+
+  position: relative;
+
+  background:
+    radial-gradient(
+      circle at 15% 10%,
+      rgba(79, 70, 229, 0.16),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 85% 50%,
+      rgba(168, 85, 247, 0.12),
+      transparent 30%
+    ),
+    #070b18;
+
+  color: #eef2ff;
+
+  font-family: "DM Sans", sans-serif;
+}
+
+
+/* ========================================
+   BACKGROUND GRID
+======================================== */
+
+.success-grid {
+  position: fixed;
+
+  inset: 0;
+
+  pointer-events: none;
+
+  opacity: 0.35;
+
+  background-image:
+    linear-gradient(
+      rgba(255, 255, 255, 0.025) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.025) 1px,
+      transparent 1px
+    );
+
+  background-size: 55px 55px;
+
+  mask-image:
+    linear-gradient(
+      to bottom,
+      black,
+      transparent 85%
+    );
+
+  -webkit-mask-image:
+    linear-gradient(
+      to bottom,
+      black,
+      transparent 85%
+    );
+}
+
+
+/* ========================================
+   BACKGROUND ORBS
+======================================== */
+
+.success-orb {
+  position: fixed;
+
+  width: 450px;
+  height: 450px;
+
+  border-radius: 50%;
+
+  filter: blur(110px);
+
+  pointer-events: none;
+
+  opacity: 0.18;
+
+  z-index: 0;
+}
+
+
+.success-orb-left {
+  left: -200px;
+  top: 300px;
+
+  background: #4f46e5;
+}
+
+
+.success-orb-right {
+  right: -220px;
+  bottom: 50px;
+
+  background: #9333ea;
+}
+
+
+/* ========================================
+   NAVBAR
+======================================== */
+
+.booking-success-nav {
+  width: min(
+    1300px,
+    calc(100% - 60px)
+  );
+
+  height: 88px;
+
+  margin: 0 auto;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  position: relative;
+
+  z-index: 5;
+
+  border-bottom:
+    1px solid
+    rgba(255, 255, 255, 0.07);
+}
+
+
+/* ========================================
+   BRAND
+======================================== */
+
+.success-brand {
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  padding: 0;
+
+  border: none;
+
+  background: transparent;
+
+  color: white;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.2s ease;
+}
+
+
+.success-brand:hover {
+  transform:
+    translateY(-1px);
+}
+
+
+.success-brand .brand-icon {
+  width: 40px;
+  height: 40px;
+
+  display: grid;
+
+  place-items: center;
+
+  border-radius: 12px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #7c3aed,
+      #4f46e5
+    );
+
+  color: white;
+
+  font-family:
+    "Outfit",
+    sans-serif;
+
+  font-size: 20px;
+
+  font-weight: 800;
+
+  box-shadow:
+    0 10px 25px
+    rgba(124, 58, 237, 0.28);
+}
+
+
+.success-brand-text {
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: flex-start;
+}
+
+
+.success-brand-text strong {
+  font-family:
+    "Outfit",
+    sans-serif;
+
+  font-size: 20px;
+
+  font-weight: 700;
+}
+
+
+.success-brand-text small {
+  margin-top: 2px;
+
+  color: #7e8aa3;
+
+  font-size: 9px;
+
+  font-weight: 700;
+
+  letter-spacing: 2px;
+}
+
+
+/* ========================================
+   RESERVATION STATUS
+======================================== */
+
+.reservation-status {
+  display: flex;
+
+  align-items: center;
+
+  gap: 9px;
+
+  padding:
+    10px
+    16px;
+
+  border-radius: 100px;
+
+  font-size: 10px;
+
+  font-weight: 800;
+
+  letter-spacing: 1.2px;
+}
+
+
+.status-active {
+  border:
+    1px solid
+    rgba(34, 197, 94, 0.2);
+
+  background:
+    rgba(34, 197, 94, 0.06);
+
+  color: #86efac;
+}
+
+
+.status-cancelled {
+  border:
+    1px solid
+    rgba(239, 68, 68, 0.2);
+
+  background:
+    rgba(239, 68, 68, 0.06);
+
+  color: #fca5a5;
+}
+
+
+.status-dot {
+  width: 7px;
+
+  height: 7px;
+
+  border-radius: 50%;
+}
+
+
+.status-active .status-dot {
+  background: #22c55e;
+
+  box-shadow:
+    0 0 12px
+    rgba(34, 197, 94, 0.8);
+}
+
+
+.status-cancelled .status-dot {
+  background: #ef4444;
+
+  box-shadow:
+    0 0 10px
+    rgba(239, 68, 68, 0.6);
+}
+
+
+/* ========================================
+   MAIN CONTAINER
+======================================== */
+
+.booking-success-container {
+  width: min(
+    1120px,
+    calc(100% - 60px)
+  );
+
+  margin: 0 auto;
+
+  padding:
+    65px
+    0
+    80px;
+
+  position: relative;
+
+  z-index: 2;
+}
+
+
+/* ========================================
+   SUCCESS HEADER
+======================================== */
+
+.booking-success-header {
+  max-width: 760px;
+
+  margin:
+    0
+    auto
+    55px;
+
+  text-align: center;
+}
+
+
+.success-icon {
+  width: 78px;
+
+  height: 78px;
+
+  display: grid;
+
+  place-items: center;
+
+  margin:
+    0
+    auto
+    22px;
+
+  border-radius: 25px;
+
+  position: relative;
+}
+
+
+.success-confirmed {
+  background:
+    linear-gradient(
+      135deg,
+      rgba(34, 197, 94, 0.18),
+      rgba(16, 185, 129, 0.06)
+    );
+
+  border:
+    1px solid
+    rgba(34, 197, 94, 0.28);
+
+  box-shadow:
+    0 0 60px
+    rgba(34, 197, 94, 0.08);
+}
+
+
+.success-cancelled {
+  background:
+    linear-gradient(
+      135deg,
+      rgba(239, 68, 68, 0.18),
+      rgba(244, 63, 94, 0.06)
+    );
+
+  border:
+    1px solid
+    rgba(239, 68, 68, 0.28);
+
+  box-shadow:
+    0 0 60px
+    rgba(239, 68, 68, 0.08);
+}
+
+
+.checkmark {
+  width: 48px;
+
+  height: 48px;
+
+  display: grid;
+
+  place-items: center;
+
+  border-radius: 16px;
+
+  background:
+    rgba(255, 255, 255, 0.08);
+
+  font-size: 27px;
+
+  font-weight: 700;
+}
+
+
+.success-confirmed .checkmark {
+  color: #6ee7b7;
+}
+
+
+.success-cancelled .checkmark {
+  color: #fca5a5;
+}
+
+
+.success-label {
+  color: #a5b4fc;
+
+  font-size: 10px;
+
+  font-weight: 800;
+
+  letter-spacing: 2px;
+}
+
+
+.booking-success-header h1 {
+  margin:
+    14px
+    0
+    15px;
+
+  color: white;
+
+  font-family:
+    "Outfit",
+    sans-serif;
+
+  font-size:
+    clamp(
+      42px,
+      6vw,
+      68px
+    );
+
+  line-height: 1;
+
+  letter-spacing: -2.5px;
+}
+
+
+.booking-success-header h1 span {
+  background:
+    linear-gradient(
+      100deg,
+      #a78bfa,
+      #818cf8,
+      #d8b4fe
+    );
+
+  -webkit-background-clip: text;
+
+  background-clip: text;
+
+  color: transparent;
+}
+
+
+.success-description {
+  max-width: 620px;
+
+  margin: auto;
+
+  color: #8793a9;
+
+  font-size: 14px;
+
+  line-height: 1.8;
+}
+
+
+/* ========================================
+   DIGITAL PASS WRAPPER
+======================================== */
+
+.digital-pass-wrapper {
+  width: 100%;
+}
+
+
+/* ========================================
+   DIGITAL PASS
+======================================== */
+
+.digital-pass {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1.8fr)
+    40px
+    minmax(260px, 0.85fr);
+
+  overflow: hidden;
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.1);
+
+  border-radius: 28px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(24, 30, 53, 0.96),
+      rgba(10, 15, 30, 0.98)
+    );
+
+  box-shadow:
+    0 35px 90px
+    rgba(0, 0, 0, 0.32);
+}
+
+
+/* ========================================
+   PASS MAIN
+======================================== */
+
+.pass-main {
+  padding:
+    38px
+    42px;
+}
+
+
+/* ========================================
+   PASS TOP
+======================================== */
+
+.pass-top {
+  display: flex;
+
+  align-items: flex-start;
+
+  justify-content: space-between;
+
+  gap: 20px;
+}
+
+
+.pass-label {
+  display: block;
+
+  color: #78859d;
+
+  font-size: 9px;
+
+  font-weight: 800;
+
+  letter-spacing: 1.8px;
+}
+
+
+.pass-top h2 {
+  margin:
+    8px
+    0
+    0;
+
+  color: white;
+
+  font-family:
+    "Outfit",
+    sans-serif;
+
+  font-size: 24px;
+
+  letter-spacing: -0.5px;
+}
+
+
+/* ========================================
+   PASS STATUS
+======================================== */
+
+.pass-status {
+  display: flex;
+
+  align-items: center;
+
+  gap: 7px;
+
+  padding:
+    8px
+    12px;
+
+  border-radius: 100px;
+
+  font-size: 9px;
+
+  font-weight: 800;
+
+  letter-spacing: 1px;
+
+  white-space: nowrap;
+}
+
+
+.pass-confirmed {
+  color: #86efac;
+
+  background:
+    rgba(34, 197, 94, 0.08);
+
+  border:
+    1px solid
+    rgba(34, 197, 94, 0.16);
+}
+
+
+.pass-inactive {
+  color: #fca5a5;
+
+  background:
+    rgba(239, 68, 68, 0.08);
+
+  border:
+    1px solid
+    rgba(239, 68, 68, 0.16);
+}
+
+
+/* ========================================
+   PASS LINE
+======================================== */
+
+.pass-line {
+  height: 1px;
+
+  margin:
+    28px
+    0;
+
+  background:
+    rgba(255, 255, 255, 0.07);
+}
+
+
+/* ========================================
+   SEAT SECTION
+======================================== */
+
+.seat-pass-section {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  min-height: 155px;
+
+  padding:
+    8px
+    0
+    22px;
+}
+
+
+.seat-pass-info > span {
+  color: #7c889f;
+
+  font-size: 9px;
+
+  font-weight: 800;
+
+  letter-spacing: 1.5px;
+}
+
+
+.seat-pass-info h1 {
+  margin:
+    7px
+    0;
+
+  font-family:
+    "Outfit",
+    sans-serif;
+
+  font-size: 66px;
+
+  line-height: 1;
+
+  letter-spacing: -2px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #c4b5fd,
+      #818cf8
+    );
+
+  -webkit-background-clip: text;
+
+  background-clip: text;
+
+  color: transparent;
+}
+
+
+.seat-pass-info p {
+  margin: 0;
+
+  color: #9aa6ba;
+
+  font-size: 12px;
+}
+
+
+/* ========================================
+   SEAT VISUAL
+======================================== */
+
+.seat-visual {
+  width: 100px;
+
+  height: 100px;
+
+  display: grid;
+
+  place-items: center;
+
+  position: relative;
+
+  border-radius: 28px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(124, 58, 237, 0.15),
+      rgba(79, 70, 229, 0.06)
+    );
+
+  border:
+    1px solid
+    rgba(139, 92, 246, 0.18);
+
+  font-size: 40px;
+
+  overflow: hidden;
+}
+
+
+.seat-visual span {
+  position: relative;
+
+  z-index: 2;
+}
+
+
+.seat-glow {
+  position: absolute;
+
+  width: 55px;
+
+  height: 55px;
+
+  border-radius: 50%;
+
+  background: #7c3aed;
+
+  filter: blur(30px);
+
+  opacity: 0.35;
+
+  z-index: 1;
+}
+
+
+/* ========================================
+   PASS DETAILS
+======================================== */
+
+.pass-details {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, 1fr);
+
+  gap: 25px;
+
+  padding-top: 25px;
+
+  border-top:
+    1px solid
+    rgba(255, 255, 255, 0.07);
+}
+
+
+.pass-detail {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 7px;
+
+  min-width: 0;
+}
+
+
+.pass-detail span {
+  color: #6d7990;
+
+  font-size: 8px;
+
+  font-weight: 800;
+
+  letter-spacing: 1.4px;
+}
+
+
+.pass-detail strong {
+  color: #dce2f0;
+
+  font-size: 11px;
+
+  font-weight: 600;
+
+  line-height: 1.5;
+
+  overflow-wrap: anywhere;
+}
+
+
+/* ========================================
+   TICKET DIVIDER
+======================================== */
+
+.pass-divider {
+  position: relative;
+
+  display: flex;
+
+  justify-content: center;
+}
+
+
+.dashed-divider {
+  width: 1px;
+
+  margin:
+    28px
+    0;
+
+  background-image:
+    linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0.25) 45%,
+      transparent 0%
+    );
+
+  background-position: center;
+
+  background-size:
+    1px
+    12px;
+
+  background-repeat: repeat-y;
+}
+
+
+.pass-cut {
+  position: absolute;
+
+  width: 38px;
+
+  height: 38px;
+
+  border-radius: 50%;
+
+  background: #070b18;
+}
+
+
+.pass-cut-top {
+  top: -19px;
+}
+
+
+.pass-cut-bottom {
+  bottom: -19px;
+}
+
+
+/* ========================================
+   QR SECTION
+======================================== */
+
+.digital-checkin-section {
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  padding:
+    35px
+    28px;
+
+  background:
+    rgba(255, 255, 255, 0.015);
+
+  text-align: center;
+}
+
+
+/* ========================================
+   QR HEADING
+======================================== */
+
+.checkin-heading {
+  display: flex;
+
+  align-items: center;
+
+  gap: 7px;
+
+  margin-bottom: 20px;
+
+  color: #aab5ca;
+
+  font-size: 9px;
+
+  font-weight: 800;
+
+  letter-spacing: 1.5px;
+}
+
+
+.checkin-live-dot {
+  width: 7px;
+
+  height: 7px;
+
+  border-radius: 50%;
+
+  background: #22c55e;
+
+  box-shadow:
+    0 0 10px
+    rgba(34, 197, 94, 0.8);
+}
+
+
+/* ========================================
+   QR CODE
+======================================== */
+
+.qr-wrapper {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  padding: 12px;
+
+  border-radius: 20px;
+
+  background: white;
+
+  box-shadow:
+    0 15px 35px
+    rgba(0, 0, 0, 0.25);
+}
+
+
+.fake-qr {
+  width: 185px;
+
+  height: 185px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  background: white;
+}
+
+
+.fake-qr svg {
+  display: block;
+
+  max-width: 100%;
+
+  max-height: 100%;
+}
+
+
+/* ========================================
+   QR PASS INFORMATION
+======================================== */
+
+.qr-pass-info {
+  width: 100%;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, 1fr);
+
+  gap: 8px;
+
+  margin-top: 20px;
+
+  padding-top: 16px;
+
+  border-top:
+    1px solid
+    rgba(255, 255, 255, 0.07);
+}
+
+
+.qr-info-row {
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 5px;
+
+  min-width: 0;
+}
+
+
+.qr-info-row span {
+  color: #6d7990;
+
+  font-size: 8px;
+
+  font-weight: 800;
+
+  letter-spacing: 1.2px;
+}
+
+
+.qr-info-row strong {
+  color: #dce2f0;
+
+  font-family:
+    "Outfit",
+    sans-serif;
+
+  font-size: 13px;
+
+  font-weight: 700;
+
+  line-height: 1.4;
+
+  text-align: center;
+
+  overflow-wrap: anywhere;
+}
+
+
+.digital-checkin-section small {
+  margin-top: 16px;
+
+  color: #748096;
+
+  font-size: 10px;
+
+  line-height: 1.6;
+}
+
+
+/* ========================================
+   CANCELLED PASS
+======================================== */
+
+.pass-cancelled {
+  opacity: 0.72;
+}
+
+
+.pass-cancelled .qr-wrapper {
+  filter: grayscale(1);
+}
+
+
+.pass-cancelled .checkin-live-dot {
+  background: #ef4444;
+
+  box-shadow:
+    0 0 10px
+    rgba(239, 68, 68, 0.7);
+}
+
+
+/* ========================================
+   ACTION BUTTONS
+======================================== */
+
+.success-actions {
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  flex-wrap: wrap;
+
+  gap: 12px;
+
+  margin-top: 28px;
+}
+
+
+.success-outline-btn,
+.success-home-btn {
+  min-height: 50px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 10px;
+
+  padding:
+    0
+    22px;
+
+  border-radius: 13px;
+
+  font-family:
+    "DM Sans",
+    sans-serif;
+
+  font-size: 11px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease,
+    box-shadow 0.25s ease,
+    color 0.25s ease;
+}
+
+
+/* ========================================
+   OUTLINE BUTTON
+======================================== */
+
+.success-outline-btn {
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.1);
+
+  background:
+    rgba(255, 255, 255, 0.035);
+
+  color: #aeb8cc;
+}
+
+
+.success-outline-btn:hover {
+  color: white;
+
+  background:
+    rgba(255, 255, 255, 0.07);
+
+  transform:
+    translateY(-3px);
+}
+
+
+.success-outline-btn span {
+  font-size: 17px;
+
+  line-height: 1;
+}
+
+
+/* ========================================
+   HOME BUTTON
+======================================== */
+
+.success-home-btn {
+  min-width: 170px;
+
+  border: none;
+
+  background:
+    linear-gradient(
+      135deg,
+      #7c3aed,
+      #4f46e5
+    );
+
+  color: white;
+
+  box-shadow:
+    0 12px 30px
+    rgba(79, 70, 229, 0.28);
+}
+
+
+.success-home-btn:hover {
+  transform:
+    translateY(-3px);
+
+  box-shadow:
+    0 18px 40px
+    rgba(124, 58, 237, 0.4);
+}
+
+
+.success-home-btn strong {
+  font-size: 17px;
+
+  line-height: 1;
+}
+
+
+/* ========================================
+   BUTTON ACTIVE STATES
+======================================== */
+
+.success-outline-btn:active,
+.success-home-btn:active {
+  transform:
+    translateY(0);
+}
+
+
+/* ========================================
+   CHECK-IN INFO CARD
+======================================== */
+
+.checkin-info-card {
+  display: grid;
+
+  grid-template-columns:
+    auto
+    1fr
+    auto;
+
+  align-items: center;
+
+  gap: 20px;
+
+  margin-top: 45px;
+
+  padding:
+    22px
+    26px;
+
+  border:
+    1px solid
+    rgba(99, 102, 241, 0.15);
+
+  border-radius: 20px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(79, 70, 229, 0.08),
+      rgba(124, 58, 237, 0.035)
+    );
+}
+
+
+.checkin-info-inactive {
+  border-color:
+    rgba(239, 68, 68, 0.16);
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(239, 68, 68, 0.06),
+      rgba(127, 29, 29, 0.025)
+    );
+}
+
+
+/* ========================================
+   INFO ICON
+======================================== */
+
+.info-icon {
+  width: 43px;
+
+  height: 43px;
+
+  flex-shrink: 0;
+
+  display: grid;
+
+  place-items: center;
+
+  border-radius: 13px;
+
+  background:
+    rgba(99, 102, 241, 0.13);
+
+  color: #a5b4fc;
+
+  font-family:
+    "Outfit",
+    sans-serif;
+
+  font-size: 19px;
+
+  font-weight: 700;
+}
+
+
+.checkin-info-inactive .info-icon {
+  background:
+    rgba(239, 68, 68, 0.12);
+
+  color: #fca5a5;
+}
+
+
+/* ========================================
+   INFO CONTENT
+======================================== */
+
+.info-label {
+  color: #818cf8;
+
+  font-size: 8px;
+
+  font-weight: 800;
+
+  letter-spacing: 1.5px;
+}
+
+
+.checkin-info-inactive .info-label {
+  color: #fca5a5;
+}
+
+
+.checkin-info-card h4 {
+  margin:
+    5px
+    0
+    5px;
+
+  color: #e3e8f5;
+
+  font-family:
+    "Outfit",
+    sans-serif;
+
+  font-size: 15px;
+}
+
+
+.checkin-info-card p {
+  margin: 0;
+
+  color: #8490a6;
+
+  font-size: 11px;
+
+  line-height: 1.7;
+}
+
+
+/* ========================================
+   PASS ID BOX
+======================================== */
+
+.checkin-time {
+  min-width: 150px;
+
+  padding:
+    12px;
+
+  border-left:
+    1px solid
+    rgba(255, 255, 255, 0.08);
+
+  text-align: center;
+}
+
+
+.checkin-time span {
+  display: block;
+
+  color: #69758b;
+
+  font-size: 8px;
+
+  font-weight: 800;
+
+  letter-spacing: 1px;
+}
+
+
+.checkin-time strong {
+  display: block;
+
+  margin-top: 7px;
+
+  color: #c4b5fd;
+
+  font-family:
+    "Outfit",
+    sans-serif;
+
+  font-size: 14px;
+
+  font-weight: 700;
+
+  overflow-wrap: anywhere;
+}
+
+
+/* ========================================
+   RESPONSIVE - TABLET
+======================================== */
+
+@media (
+  max-width: 950px
+) {
+
+  .digital-pass {
+    grid-template-columns:
+      1fr;
+  }
+
+
+  .pass-divider {
+    height: 40px;
+
+    align-items: center;
+  }
+
+
+  .dashed-divider {
+    width:
+      calc(
+        100% - 50px
+      );
+
+    height: 1px;
+
+    margin: 0;
+
+    background-image:
+      linear-gradient(
+        to right,
+        rgba(255, 255, 255, 0.25) 45%,
+        transparent 0%
+      );
+
+    background-size:
+      12px
+      1px;
+
+    background-repeat:
+      repeat-x;
+  }
+
+
+  .pass-cut-top {
+    left: -19px;
+
+    top: 1px;
+  }
+
+
+  .pass-cut-bottom {
+    right: -19px;
+
+    bottom: 1px;
+  }
+
+
+  .digital-checkin-section {
+    padding:
+      35px;
+  }
+
+
+  .qr-pass-info {
+    max-width: 420px;
+  }
+
+}
+
+
+/* ========================================
+   RESPONSIVE - MOBILE
+======================================== */
+
+@media (
+  max-width: 700px
+) {
+
+  .booking-success-nav,
+  .booking-success-container {
+    width:
+      calc(
+        100% - 32px
+      );
+  }
+
+
+  .booking-success-container {
+    padding-top: 45px;
+  }
+
+
+  .success-brand-text small {
+    display: none;
+  }
+
+
+  .reservation-status {
+    font-size: 8px;
+
+    padding:
+      9px
+      12px;
+  }
+
+
+  .booking-success-header {
+    margin-bottom: 40px;
+  }
+
+
+  .pass-main {
+    padding:
+      28px
+      22px;
+  }
+
+
+  .pass-top {
+    flex-direction: column;
+
+    align-items: flex-start;
+  }
+
+
+  .seat-pass-section {
+    min-height: auto;
+  }
+
+
+  .seat-pass-info h1 {
+    font-size: 55px;
+  }
+
+
+  .seat-visual {
+    width: 75px;
+
+    height: 75px;
+
+    border-radius: 22px;
+
+    font-size: 30px;
+  }
+
+
+  .pass-details {
+    grid-template-columns:
+      1fr;
+
+    gap: 17px;
+  }
+
+
+  .pass-detail {
+    padding-bottom: 12px;
+
+    border-bottom:
+      1px solid
+      rgba(255, 255, 255, 0.04);
+  }
+
+
+  .pass-detail:last-child {
+    border-bottom: none;
+
+    padding-bottom: 0;
+  }
+
+
+  .checkin-info-card {
+    grid-template-columns:
+      auto
+      1fr;
+  }
+
+
+  .checkin-time {
+    grid-column:
+      span 2;
+
+    border-left: none;
+
+    border-top:
+      1px solid
+      rgba(255, 255, 255, 0.08);
+
+    padding-top: 18px;
+  }
+
+}
+
+
+/* ========================================
+   RESPONSIVE - SMALL MOBILE
+======================================== */
+
+@media (
+  max-width: 480px
+) {
+
+  .booking-success-header h1 {
+    font-size: 43px;
+
+    letter-spacing: -1.5px;
+  }
+
+
+  .success-description {
+    font-size: 12px;
+  }
+
+
+  .booking-success-nav {
+    height: 75px;
+  }
+
+
+  .success-brand .brand-icon {
+    width: 36px;
+
+    height: 36px;
+
+    border-radius: 10px;
+  }
+
+
+  .success-brand-text strong {
+    font-size: 17px;
+  }
+
+
+  .reservation-status {
+    font-size: 7px;
+
+    letter-spacing: 0.7px;
+  }
+
+
+  .seat-pass-section {
+    align-items: flex-start;
+  }
+
+
+  .seat-pass-info h1 {
+    font-size: 48px;
+  }
+
+
+  .seat-visual {
+    width: 68px;
+
+    height: 68px;
+
+    font-size: 27px;
+  }
+
+
+  .digital-checkin-section {
+    padding:
+      28px
+      18px;
+  }
+
+
+  .fake-qr {
+    width: 175px;
+
+    height: 175px;
+  }
+
+
+  .qr-wrapper {
+    padding: 10px;
+  }
+
+
+  .success-actions {
+    flex-direction: column;
+  }
+
+
+  .success-outline-btn,
+  .success-home-btn {
+    width: 100%;
+  }
+
+
+  .checkin-info-card {
+    padding: 20px;
+  }
+
+
+  .checkin-info-card p {
+    font-size: 10px;
+  }
+
+
+  .qr-pass-info {
+    gap: 6px;
+  }
+
+
+  .qr-info-row strong {
+    font-size: 12px;
+  }
+
+}
+
+
+/* ========================================
+   VERY SMALL SCREENS
+======================================== */
+
+@media (
+  max-width: 360px
+) {
+
+  .booking-success-nav,
+  .booking-success-container {
+    width:
+      calc(
+        100% - 24px
+      );
+  }
+
+
+  .reservation-status {
+    padding:
+      8px
+      9px;
+  }
+
+
+  .reservation-status {
+    font-size: 6px;
+  }
+
+
+  .success-brand-text strong {
+    font-size: 15px;
+  }
+
+
+  .pass-main {
+    padding:
+      24px
+      17px;
+  }
+
+
+  .pass-top h2 {
+    font-size: 19px;
+  }
+
+
+  .seat-pass-info h1 {
+    font-size: 42px;
+  }
+
+
+  .seat-visual {
+    width: 60px;
+
+    height: 60px;
+  }
+
+
+  .fake-qr {
+    width: 160px;
+
+    height: 160px;
+  }
+
+
+  .qr-pass-info {
+    grid-template-columns:
+      1fr;
+  }
+
+}
